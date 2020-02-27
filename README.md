@@ -38,3 +38,24 @@ push git commits and tags, and push the `.gem` file to
 
 Bug reports and pull requests are welcome on GitHub at
 https://github.com/bluebottlecoffee/genesis.
+
+### TODO
+
+#### Initial Release
+
+Handle `ItemDefinition`s and `Item`s without worrying about what an `Item` is
+composed of.
+
+- `ItemDefinition`
+- `Item`
+- `InventoryItem`
+- `ComposedItem`
+- `OnDemandComposedItem`
+
+#### Later Release
+
+Handle the `BillOfMaterials` on `ComposedItem` and `OnDemandComposedItem`.
+This allows us to store the 'recipe' of an `Item` for the purpose of material
+costs.
+
+- `BillOfMaterials`
