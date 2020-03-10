@@ -15,10 +15,10 @@ module Genesis
       # Insert a new ItemDefinition
       #
       # Accepts +params+ as a Hash
-      # Returns a Result[Sequel::DatabaseError, Id] where Id is a string
+      # Returns a Result[Sequel::DatabaseError, [id,version]]
       def insert(params)
-        contract.bind do |res|
-          hash    = res.to_h
+        InsertContract.new.call(params).to_monad.bind do |contract|
+          hash    = contract.to_h
           attrs   = Sequel::hstore(hash[:attributes])
           version = new_version
 

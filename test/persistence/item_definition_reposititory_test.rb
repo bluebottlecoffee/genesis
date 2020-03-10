@@ -24,8 +24,8 @@ class ItemDefinitionRepositoryTest < Minitest::Test
 
     res = @repo.insert(valid_params)
 
-    res.fmap do |succ|
-      id, version = succ
+    res.fmap do |pair|
+      id, version = pair
 
       assert id
       assert version
