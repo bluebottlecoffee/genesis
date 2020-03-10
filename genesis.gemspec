@@ -40,5 +40,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'minitest', '~> 5.0'
   spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rubocop', '~> 0.80.0'
+
+  spec.add_runtime_dependency 'dry-monads', '~> 1.3.5'
+  spec.add_runtime_dependency 'dry-validation', '~> 1.4.2'
+  spec.add_runtime_dependency 'pg', '~> 1.2.2'
+  spec.add_runtime_dependency 'sequel', '~> 5.30.0'
+  spec.add_runtime_dependency 'ulid', '~> 1.2.0'
 end

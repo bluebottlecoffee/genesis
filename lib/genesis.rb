@@ -7,3 +7,4 @@ module Genesis
 end
 
 require 'genesis/entities'
+require 'genesis/persistence'
