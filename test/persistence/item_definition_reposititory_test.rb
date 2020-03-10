@@ -14,14 +14,6 @@ class ItemDefinitionRepositoryTest < Minitest::Test
   end
 
   def test_inserting_with_valid_params
-    valid_params = {
-      item_definition_id: 'TCY0P4MPH83VEPST',
-      name: 'Test item',
-      attributes: {
-        tagline: 'It is super delicious',
-      },
-    }
-
     res = @repo.insert(valid_params)
 
     res.fmap do |pair|
@@ -46,5 +38,17 @@ class ItemDefinitionRepositoryTest < Minitest::Test
       errors = failure.errors.to_h
       assert_equal ['is missing'], errors[:item_definition_id]
     end
+  end
+
+  private
+
+  def valid_params
+    {
+      item_definition_id: 'TCY0P4MPH83VEPST',
+      name: 'Test item',
+      attributes: {
+        tagline: 'It is super delicious',
+      },
+    }
   end
 end
