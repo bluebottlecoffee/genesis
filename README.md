@@ -3,6 +3,11 @@
 A foundational model for building your own personal
 [PIM](https://en.wikipedia.org/wiki/Product_information_management).
 
+## Requirements
+
+  * Ruby 2.7
+  * Postgres 11
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,6 +23,18 @@ And then execute:
 Or install it yourself as:
 
     $ gem install genesis
+
+## Getting Started
+
+A Postgres database is required for usage so you'll need to set that up first.
+
+```sh
+rake database:setup[env]
+# Be sure to replace 'env' with 'development', 'test', or 'production'
+```
+
+**Note**: This is a destructive action! If you have an existing database already
+setup, this will drop it first.
 
 ## Usage
 
