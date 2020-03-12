@@ -4,11 +4,12 @@ require 'test_helper'
 
 class ItemDefinitionRepositoryTest < Minitest::Test
   def setup
+    config = Genesis::Persistence.config
     conn = Sequel.connect(
-      :adapter  => 'postgres',
-      :host     => 'localhost',
-      :database => 'genesis',
-      :user     => 'kyle'
+      adapter: config.adapter,
+      host: config.host,
+      database: config.database,
+      user: config.username
     )
     @repo = Genesis::Persistence::ItemDefinitionRepository.new(conn)
   end
