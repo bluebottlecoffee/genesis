@@ -22,7 +22,10 @@ module Genesis
       #   - :production
       def configure(env = :development)
         @config = Configuration.new(env)
+
         yield config if block_given?
+
+        config
       end
     end
 
@@ -32,11 +35,12 @@ module Genesis
     class Configuration
       InvalidEnvironmentError = Class.new(RuntimeError)
 
-      attr_accessor :adapter, :database, :host, :port, :username
+      attr_accessor :environment, :adapter, :database, :host, :port, :username
 
       def initialize(env)
         raise InvalidEnvironmentError, "invalid environment: #{env}" unless ENVIRONMENTS.include?(env)
 
+        @environment = env
         @adapter = 'postgres'
         load_config(env)
       end
