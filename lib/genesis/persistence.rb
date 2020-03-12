@@ -22,7 +22,10 @@ module Genesis
       #   - :production
       def configure(env = :development)
         @config = Configuration.new(env)
+
         yield config if block_given?
+
+        config
       end
     end
 
