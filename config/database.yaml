@@ -1,0 +1,12 @@
+default: &default
+  host: localhost
+  port: 5432
+  username: genesis
+
+development:
+  <<: *default
+  database: genesis_development
+
+test:
+  <<: *default
+  database: genesis_test
