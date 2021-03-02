@@ -45,5 +45,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'dry-validation', '~> 1.5.0'
   spec.add_runtime_dependency 'pg', '~> 1.2.2'
   spec.add_runtime_dependency 'sequel', '~> 5.30.0'
-  spec.add_runtime_dependency 'ulid', '~> 1.2.0'
+  spec.add_runtime_dependency 'ulid', '>= 1.2', '< 1.4'
 end
