@@ -6,4 +6,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pry', '~> 0.12.2'
-gem 'rubocop', '~> 0.80.0'
+gem 'rubocop', '~> 1.12.1'
