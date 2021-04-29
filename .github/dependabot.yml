@@ -1,0 +1,27 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "09:00"
+    timezone: America/Los_Angeles
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: rubocop
+    versions:
+    - 1.10.0
+    - 1.11.0
+    - 1.12.0
+    - 1.12.1
+    - 1.9.0
+    - 1.9.1
+  - dependency-name: sequel
+    versions:
+    - 5.40.0
+    - 5.41.0
+    - 5.42.0
+  - dependency-name: pry
+    versions:
+    - 0.13.1
+    - 0.14.0
